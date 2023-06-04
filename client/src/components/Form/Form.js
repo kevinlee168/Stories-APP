@@ -28,15 +28,17 @@ const StyledFileInput = styled(TextField)`
 `;
 
 const StyledButton = styled(Button)`
-    margin: 5px 10px!important;
-    color: #BF4F74 !important;
-    font-size: 1em;
-    border: 2px solid #BF4F74 !important;
-    border-radius: 3px !important;    
+    margin: 5px 5px!important;
+    color: #23a7a2 !important;
+    font-size: 0.6em;
+    border: 2px solid #23a7a2 !important;
+    border-radius: 3px !important;  
+    text-transform: none !important;  
 `;
 
 const FileBaseDiv = styled.div`
-    margin: 10px 0;
+    margin: 5px 0;
+    padding: 5px 0px!important;
 `;
 
 const ButtonContainer = styled.div`
