@@ -5,7 +5,8 @@ import styled from 'styled-components';
 import { getPosts } from './actions/posts'
 import stories from './images/stories.png';
 import Posts from './components/Posts/Posts';
-import Form from "./components/Form/Form";
+import Form from './components/Form/Form';
+import ResponsiveAppBar from './components/ResponsiveAppBar/ResponsiveAppBar';
 
 // const AppBar = styled.appbar` // there is no appbar component in HTML, and therefore, styled-components cannot generate a styled component for it by this code.
 
@@ -41,10 +42,11 @@ const App = () => {
 
     return (
         <Container maxWidth="lg">
-            <StyledAppBar position="static" color="inherit">
+            <ResponsiveAppBar />
+            {/* <StyledAppBar position="static" color="inherit">
                 <Typography variant="h2" align="center">Memories</Typography>
                 <Img src={stories} alt="icon" />
-            </StyledAppBar>
+            </StyledAppBar> */}
             <Grow in>
                 <Container>
                     <Grid container justify="space-between" alignItems="stretch" spacing={3}>
