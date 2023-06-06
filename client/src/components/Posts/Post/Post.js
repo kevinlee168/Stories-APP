@@ -5,7 +5,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import moment from 'moment';
 
-const Post = ({ post }) => {
+const Post = ({ post, setCurrentId }) => {
     return (
         <Card style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', borderRadius: '6px', height: '100%', position: 'relative' }}>
             <CardMedia image={post.selectedFile} title={post.title}
@@ -15,7 +15,8 @@ const Post = ({ post }) => {
                 <Typography variant="body2">{moment(post.createdAt).fromNow}</Typography>
             </div>
             <div style={{ position: 'absolute', top: '20px', right: '20px', color: 'white' }}>
-                <Button style={{ color: 'white' }} size="small" onClick={() => { }}>
+                <Button style={{ color: 'white' }} size="small"
+                    onClick={() => setCurrentId(post._id)}>
                     <MoreHorizIcon fontSize="default" />
                 </Button>
             </div>
