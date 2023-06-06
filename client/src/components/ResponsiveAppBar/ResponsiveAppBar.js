@@ -38,7 +38,7 @@ function ResponsiveAppBar() {
   };
 
   const StyledAppbar = styled(AppBar)`
-    background: papayawhip !important;
+    background: #fff !important;
     margin-bottom: 30px !important;
   `;
 

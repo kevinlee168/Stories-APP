@@ -8,7 +8,7 @@ import { createPost } from '../../actions/posts';
 
 const StyledForm = styled.form`
     // display: flex;
-    flexWrap: wrap;
+    flexWrap: wrap; 
     justifyContent: center;
     margin: 10px;
 `;
@@ -31,7 +31,16 @@ const StyledButton = styled(Button)`
     margin: 5px 5px!important;
     color: #23a7a2 !important;
     font-size: 0.6em;
-    border: 2px solid #23a7a2 !important;
+    border: 1.5px solid #23a7a2 !important;
+    border-radius: 3px !important;  
+    text-transform: none !important;  
+`;
+
+const StyledClearButton = styled(Button)`
+    margin: 5px 5px!important;
+    color: #9c27b0 !important;
+    font-size: 0.6em;
+    border: 1.5px solid #9c27b0 !important;
     border-radius: 3px !important;  
     text-transform: none !important;  
 `;
@@ -58,11 +67,17 @@ const Form = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
         dispatch(createPost(postData));
     }
 
     const clear = () => {
+        setPostData({
+            creator: '',
+            title: '',
+            message: '',
+            tags: '',
+            selectedFile: ''
+        });
     }
 
     return (
@@ -93,7 +108,7 @@ const Form = () => {
 
                 <ButtonContainer>
                     <StyledButton variant="outlined" type="submit" size="large" fullWidth>Submit</StyledButton>
-                    <StyledButton variant="outlined" type="submit" size="large" onClick={clear} fullWidth>Clear</StyledButton>
+                    <StyledClearButton variant="outlined" type="submit" size="large" onClick={clear} fullWidth>Clear</StyledClearButton>
                 </ButtonContainer>
             </StyledForm>
         </StyledPaper >

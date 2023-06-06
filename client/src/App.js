@@ -3,7 +3,6 @@ import { Container, Grow, Grid, AppBar } from '@mui/material';
 import { useDispatch } from 'react-redux'; // The useDispatch hook lets React components dispatch actions to the store
 import styled from 'styled-components';
 import { getPosts } from './actions/posts'
-import stories from './images/stories.png';
 import Posts from './components/Posts/Posts';
 import Form from './components/Form/Form';
 import ResponsiveAppBar from './components/ResponsiveAppBar/ResponsiveAppBar';
