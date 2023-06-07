@@ -7,13 +7,12 @@ import Form from './components/Form/Form';
 import ResponsiveAppBar from './components/ResponsiveAppBar/ResponsiveAppBar';
 
 const App = () => {
-    const [currentId, setCurrentId] = useState(null);
-
+    const [currentId, setCurrentId] = useState(0);
     const dispatch = useDispatch();
 
     useEffect(() => {
         dispatch(getPosts());
-    }, [currentId, dispatch]);
+    }, [dispatch, currentId]);
 
     return (
         <Container maxWidth="lg">
