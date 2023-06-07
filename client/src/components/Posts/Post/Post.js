@@ -38,7 +38,7 @@ const Post = ({ post, setCurrentId }) => {
                     Like
                     <p style={{ paddingLeft: '5px' }}>{post.likeCount}</p>
                 </Button>
-                <Button size="small" color="secondary" onClick={() => dispatch(deletePost(post._id))}>
+                <Button size="small" color="secondary" onClick={() => { setCurrentId(0); dispatch(deletePost(post._id)) }}>
                     <DeleteIcon fontSize="small" style={{ marginBottom: '3px' }} />
                     Delete
                 </Button>
