@@ -6,7 +6,7 @@ import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import moment from 'moment';
 import { useDispatch } from 'react-redux';
 
-import { deletePost } from '../../../actions/posts';
+import { deletePost, updateLikeCount } from '../../../actions/posts';
 
 const Post = ({ post, setCurrentId }) => {
     const dispatch = useDispatch();
@@ -26,14 +26,14 @@ const Post = ({ post, setCurrentId }) => {
                 </Button>
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between', margin: '20px' }}>
-                <Typography variant="body2" color="textSecondary">{post.tags.map((tag) => `#${tag} `)}</Typography>
+                <Typography variant="body2" color="textSecondary" component="p">{post.tags.map((tag) => `#${tag} `)}</Typography>
             </div>
             <Typography gutterBottom variant="h5" component="h2" style={{ padding: '0 16px' }}>{post.title}</Typography>
             <CardContent>
-                <Typography variant="15" gutterBottom>{post.message}</Typography>
+                <Typography variant="body2" color="textSecondary" component="p">{post.message}</Typography>
             </CardContent>
             <CardActions style={{ padding: '0 16px 8px 16px', display: 'flex', justifyContent: 'space-between' }}>
-                <Button size="small" color="primary" onClick={() => { }}>
+                <Button size="small" color="primary" onClick={() => { setCurrentId(0); dispatch(updateLikeCount(post._id)); }}>
                     <ThumbUpAltIcon fontSize="small" style={{ paddingRight: '2px', marginBottom: '3px' }} />
                     Like
                     <p style={{ paddingLeft: '5px' }}>{post.likeCount}</p>
