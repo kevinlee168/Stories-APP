@@ -26,7 +26,7 @@ const Post = ({ post, setCurrentId }) => {
                 </Button>
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between', margin: '20px' }}>
-                <Typography variant="body2" color="textSecondary" component="p">{post.tags.map((tag) => `#${tag} `)}</Typography>
+                <Typography variant="body2" color="textSecondary" component="p">{post.tags.map((tag) => `#${tag.trim()} `)}</Typography>
             </div>
             <Typography gutterBottom variant="h5" component="h2" style={{ padding: '0 16px' }}>{post.title}</Typography>
             <CardContent>
